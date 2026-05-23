@@ -25,10 +25,10 @@ class Zombie:
         self.velocity = Vector2(0, 0)
         self.radius = 10
 
-        def draw(self, screen):
-            """Отрисовка зомби на экране
+    def draw(self, screen):
+        """Отрисовка зомби на экране
 
-            Args:
-                screen: Поверхность Pygame для отрисовки
-            """
-            pygame.draw.circle(screen, self.color.value, (int(self.x), int(self.y)), self.radius)
+        Args:
+            screen: Поверхность Pygame для отрисовки
+        """
+        pygame.draw.circle(screen, self.color.value, (int(self.x), int(self.y)), self.radius)
