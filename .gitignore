@@ -1,18 +1,48 @@
-# Виртуальное окружение (то, о чем мы говорили!)
-venv/
-.venv/
-env/
-
-# Папка настроек PyCharm (её тоже нельзя отправлять на GitHub)
-.idea/
-
-# Временные файлы Python (кэш компиляции)
+```gitignore
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Логи и временные файлы операционной системы
+# Compiled files
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.class
+
+# Dependencies
+.venv/
+venv/
+env/
+lib/
+bin/
+
+# Logs and temporary files
 *.log
+*.tmp
+*.swp
+*.swo
+
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage/
+
+# Environment variables
+.env
+.env.local
+*.env.*
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+```
