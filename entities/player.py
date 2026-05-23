@@ -23,6 +23,7 @@ class Player:
         self.color = Colors.BLUE
         self.hp = 100
         self.velocity = Vector2(0, 0)
+        self.speed = 5
         self.radius = 10
     
     def draw(self, screen):

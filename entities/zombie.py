@@ -1,6 +1,6 @@
 """
 Модуль зомби
-Содержит класс Zobbie для управления персонажем игрока
+Содержит класс Zombie для управления персонажем зомби
 """
 
 import pygame
@@ -23,6 +23,7 @@ class Zombie:
         self.color = Colors.GREEN
         self.hp = 10
         self.velocity = Vector2(0, 0)
+        self.speed = 1
         self.radius = 10
 
     def draw(self, screen):

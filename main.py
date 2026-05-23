@@ -37,6 +37,27 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    # Движение игрока
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player.x > 11:
+        player.x -= player.speed
+    if keys[pygame.K_RIGHT] and player.x < WIDTH - 11:
+        player.x += player.speed
+    if keys[pygame.K_DOWN] and player.y < HEIGHT - 11:
+        player.y += player.speed
+    if keys[pygame.K_UP] and player.y > 11:
+        player.y -= player.speed
+
+    # Движение зомби
+    if player.x < zombie.x:
+        zombie.x -= zombie.speed
+    if player.y < zombie.y:
+        zombie.y -= zombie.speed
+    if player.x > zombie.x:
+        zombie.x += zombie.speed
+    if player.y > zombie.y:
+        zombie.y += zombie.speed
+
     # Очистка экрана
     screen.fill(Colors.BLACK.value)
     
