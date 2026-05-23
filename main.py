@@ -39,16 +39,16 @@ while running:
 
     # Движение игрока
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
+    if keys[pygame.K_LEFT] and player.x > 11:
         player.x -= player.speed
-    if keys[pygame.K_RIGHT]:
+    if keys[pygame.K_RIGHT] and player.x < WIDTH - 11:
         player.x += player.speed
-    if keys[pygame.K_DOWN]:
+    if keys[pygame.K_DOWN] and player.y < HEIGHT - 11:
         player.y += player.speed
-    if keys[pygame.K_UP]:
+    if keys[pygame.K_UP] and player.y > 11:
         player.y -= player.speed
 
-    #Движение зомби
+    # Движение зомби
     if player.x < zombie.x:
         zombie.x -= zombie.speed
     if player.y < zombie.y:
