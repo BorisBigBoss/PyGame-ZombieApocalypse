@@ -37,6 +37,20 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        #Движение игрока
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            player.x -= player.speed
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_RIGHT]:
+            player.x += player.speed
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_DOWN]:
+            player.y += player.speed
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_UP]:
+            player.y -= player.speed
+
     # Очистка экрана
     screen.fill(Colors.BLACK.value)
     
