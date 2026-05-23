@@ -33,3 +33,8 @@ class Player:
             screen: Поверхность Pygame для отрисовки
         """
         pygame.draw.circle(screen, self.color.value, (int(self.x), int(self.y)), self.radius)
+        
+        # Отрисовка HP
+        font = pygame.font.Font(None, 36)
+        hp_text = font.render(f"HP: {self.hp}", True, Colors.RED.value)
+        screen.blit(hp_text, (10, 10))
