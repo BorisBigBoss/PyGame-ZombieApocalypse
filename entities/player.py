@@ -15,8 +15,8 @@ class Player:
         """Инициализация игрока
         
         Args:
-            x (float): Начальная позиция по оси X
-            y (float): Начальная позиция по оси Y
+            x (float): Позиция по оси X
+            y (float): Позиция по оси Y
         """
         self.x = x
         self.y = y

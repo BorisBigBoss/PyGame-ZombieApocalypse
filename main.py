@@ -4,7 +4,9 @@
 """
 
 import pygame
+import random
 from entities.player import Player
+from entities.zombie import Zombie
 from utils.colors import Colors
 
 # Инициализация Pygame
@@ -23,6 +25,7 @@ pygame.display.set_caption("Зомби апокалипсис")
 clock = pygame.time.Clock()
 running = True
 player = Player(WIDTH / 2, HEIGHT / 2)
+zombie = Zombie(random.randint(0, 790), random.randint(0, 790))
 
 # Главный игровой цикл
 while running:
@@ -37,8 +40,9 @@ while running:
     # Очистка экрана
     screen.fill(Colors.BLACK.value)
     
-    # Отрисовка игрока
+    # Отрисовка сущностей
     player.draw(screen)
+    zombie.draw(screen)
 
     # Обновление экрана
     pygame.display.flip()
