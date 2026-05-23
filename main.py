@@ -41,7 +41,6 @@ while running:
     distance = ((player.x - zombie.x) ** 2 + (player.y - zombie.y) ** 2) ** 0.5
     if distance <= player.radius + zombie.radius:
         player.hp -= zombie.attack
-        zombie = Zombie(random.randint(0, 789), random.randint(0, 789))
     if player.hp <= 0:
         running = False
 
@@ -57,13 +56,13 @@ while running:
         player.y -= player.speed
 
     # Движение зомби
-    if player.x < zombie.x:
+    if player.x < zombie.x and distance >= player.radius + zombie.radius:
         zombie.x -= zombie.speed
-    if player.y < zombie.y:
+    if player.y < zombie.y and distance >= player.radius + zombie.radius:
         zombie.y -= zombie.speed
-    if player.x > zombie.x:
+    if player.x > zombie.x and distance >= player.radius + zombie.radius:
         zombie.x += zombie.speed
-    if player.y > zombie.y:
+    if player.y > zombie.y and distance >= player.radius + zombie.radius:
         zombie.y += zombie.speed
 
     # Очистка экрана
