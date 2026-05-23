@@ -19,7 +19,7 @@ FPS = 60
 
 # Создание игрового окна
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Зомби апокалипсис")
+pygame.display.set_caption("Зомби апокалипсис") 
 
 # Игровые объекты
 clock = pygame.time.Clock()
@@ -37,8 +37,12 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Конец игры
-    if player.x == zombie.x and player.y == zombie.y:
+    # Получение урона и конец игры
+    distance = ((player.x - zombie.x) ** 2 + (player.y - zombie.y) ** 2) ** 0.5
+    if distance <= player.radius + zombie.radius:
+        player.hp -= zombie.attack
+        zombie = Zombie(random.randint(0, 789), random.randint(0, 789))
+    if player.hp <= 0:
         running = False
 
     # Движение игрока
