@@ -48,6 +48,16 @@ while running:
     if keys[pygame.K_UP]:
         player.y -= player.speed
 
+    #Движение зомби
+    if player.x < zombie.x:
+        zombie.x -= zombie.speed
+    if player.y < zombie.y:
+        zombie.y -= zombie.speed
+    if player.x > zombie.x:
+        zombie.x += zombie.speed
+    if player.y > zombie.y:
+        zombie.y += zombie.speed
+
     # Очистка экрана
     screen.fill(Colors.BLACK.value)
     

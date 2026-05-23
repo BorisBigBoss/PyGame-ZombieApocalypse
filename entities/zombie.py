@@ -23,6 +23,7 @@ class Zombie:
         self.color = Colors.GREEN
         self.hp = 10
         self.velocity = Vector2(0, 0)
+        self.speed = 1
         self.radius = 10
 
     def draw(self, screen):
