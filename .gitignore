@@ -1,1 +1,18 @@
-Nothing should be ignored in this case, as the changes only include source code files (.py files) without any build artifacts, dependencies, or temporary files.
+# Виртуальное окружение (то, о чем мы говорили!)
+venv/
+.venv/
+env/
+
+# Папка настроек PyCharm (её тоже нельзя отправлять на GitHub)
+.idea/
+
+# Временные файлы Python (кэш компиляции)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Логи и временные файлы операционной системы
+*.log
+.DS_Store
+Thumbs.db
