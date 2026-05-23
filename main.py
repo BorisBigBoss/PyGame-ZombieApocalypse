@@ -37,6 +37,10 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    # Конец игры
+    if player.x == zombie.x and player.y == zombie.y:
+        running = False
+
     # Движение игрока
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and player.x > 11:
