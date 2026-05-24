@@ -14,10 +14,10 @@ class Zombie:
     def __init__(self, x, y):
         """Инициализация зомби
 
-                Args:
-                    x (float): Позиция по оси X
-                    y (float): Позиция по оси Y
-                """
+        Args:
+            x (float): Позиция по оси X
+            y (float): Позиция по оси Y
+        """
         self.x = x
         self.y = y
         self.color = Colors.GREEN
