@@ -11,7 +11,7 @@ from utils.colors import Colors
 class Bullet:
     """Класс пули"""
 
-    def __init__(self, x, y, direction):
+    def __init__(self, x, y):
         """Инициализация пули
 
         Args:
@@ -23,7 +23,7 @@ class Bullet:
         self.y = y
         self.color = Colors.GOLD.value
         self.speed = 100
-        self.radius = 1
+        self.radius = 5
         self.attack = 25
 
     def draw(self, screen):

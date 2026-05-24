@@ -7,6 +7,7 @@ import pygame
 import random
 from entities.player import Player
 from entities.zombie import Zombie
+from entities.bullet import Bullet
 from utils.colors import Colors
 
 # Инициализация Pygame
@@ -26,6 +27,7 @@ clock = pygame.time.Clock()
 running = True
 player = Player(WIDTH / 2, HEIGHT / 2)
 zombie = Zombie(random.randint(0, 789), random.randint(0, 789))
+bullet = Bullet(WIDTH / 2, HEIGHT / 2)
 
 # Главный игровой цикл
 while running:
@@ -65,12 +67,24 @@ while running:
     if player.y > zombie.y and distance >= player.radius + zombie.radius:
         zombie.y += zombie.speed
 
+        # Движение пули
+        if zombie.x < bullet.x and distance >= bullet.radius + zombie.radius:
+            bullet.x -= bullet.speed
+        if zombie.y < bullet.y and distance >= bullet.radius + zombie.radius:
+            bullet.y -= bullet.speed
+        if zombie.x > bullet.x and distance >= bullet.radius + zombie.radius:
+            bullet.x += bullet.speed
+        if zombie.y < bullet.y and distance >= bullet.radius + zombie.radius:
+            bullet.y += bullet.speed
+
+
     # Очистка экрана
     screen.fill(Colors.BLACK.value)
     
     # Отрисовка сущностей
     player.draw(screen)
     zombie.draw(screen)
+    bullet.draw(screen)
 
     # Обновление экрана
     pygame.display.flip()
