@@ -51,9 +51,23 @@ while running:
             direction = (mouse_pos - Vector2(player.x, player.y)).normalize()
             bullets.append(Bullet(player.x, player.y, direction))
 
-    # player.move()
+    # bullet.move()
     for bullet in bullets:
         bullet.move()
+
+    # player.move()
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player.x > 0 + player.radius + 1:
+        player.x -= player.speed
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_RIGHT] and player.x < WIDTH - player.radius - 1:
+        player.x += player.speed
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_DOWN] and player.y < HEIGHT - player.radius - 1:
+        player.y += player.speed
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP] and player.y > 0 + player.radius + 1:
+        player.y -= player.speed
 
     # zombie.move()
 
