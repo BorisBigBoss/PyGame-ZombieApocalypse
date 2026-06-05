@@ -19,12 +19,11 @@ class Bullet:
             y (float): Позиция по оси Y
             direction (Vector2): Направление движения
         """
-        self.x = x
-        self.y = y
+        self.position = Vector2(x, y)
         self.color = Colors.GOLD.value
-        self.speed = 100
+        self.speed = 1
         self.radius = 5
-        self.attack = 25
+        self.attack = 20
 
     def draw(self, screen):
         """Отрисовка пули на экране
@@ -32,4 +31,4 @@ class Bullet:
         Args:
             screen: Поверхность Pygame для отрисовки
         """
-        pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.radius)
+        pygame.draw.circle(screen, self.color, (int(self.position.x), int(self.position.y)), self.radius)
