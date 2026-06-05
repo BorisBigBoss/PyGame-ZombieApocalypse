@@ -1,34 +1,19 @@
-"""
-Модуль пули
-Содержит класс Bullet для управления снарядами
-"""
-
 import pygame
 from pygame.math import Vector2
 from utils.colors import Colors
 
-
 class Bullet:
-    """Класс пули"""
-
-    def __init__(self, x, y):
-        """Инициализация пули
-
-        Args:
-            x (float): Позиция по оси X
-            y (float): Позиция по оси Y
-            direction (Vector2): Направление движения
-        """
+    def __init__(self, x, y, direction):
         self.position = Vector2(x, y)
-        self.color = Colors.GOLD.value
-        self.speed = 1
+        self.direction = direction # без нормализации
+        self.color = (255, 215, 0)
+        self.attack = 10
+        self.velocity = 100
         self.radius = 5
-        self.attack = 20
+        self.speed = 5
 
-    def draw(self, screen):
-        """Отрисовка пули на экране
+    def draw(self, pygame, screen):
+        pygame.draw.circle(screen, self.color, self.position, self.radius)
 
-        Args:
-            screen: Поверхность Pygame для отрисовки
-        """
-        pygame.draw.circle(screen, self.color, (int(self.position.x), int(self.position.y)), self.radius)
+    def move(self):
+        self.position = self.position + self.direction * self.speed
