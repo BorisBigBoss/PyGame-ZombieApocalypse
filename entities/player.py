@@ -23,13 +23,17 @@ class Player:
         self.color = Colors.BLUE
         self.hp = 100
         self.velocity = Vector2(0, 0)
-        self.speed = 5
         self.radius = 10
     
-    def draw(self, screen):
+    def draw(self, pygame, screen):
         """Отрисовка игрока на экране
         
         Args:
             screen: Поверхность Pygame для отрисовки
         """
         pygame.draw.circle(screen, self.color.value, (int(self.x), int(self.y)), self.radius)
+        
+        # Отрисовка HP
+        font = pygame.font.Font(None, 36)
+        hp_text = font.render(f"HP: {self.hp}", True, Colors.RED.value)
+        screen.blit(hp_text, (10, 10))
